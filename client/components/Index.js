@@ -6,7 +6,7 @@ export default class Index extends React.Component {
   render() {
     return (
      <MuiThemeProvider>
-      <App />
+        <App />
      </MuiThemeProvider>
     );
   }

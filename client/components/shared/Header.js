@@ -8,12 +8,28 @@ import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
+
+
 export default class Header extends React.Component {
   render() {
+    const Logged = (props) => (
+      <IconMenu
+        {...props}
+        iconButtonElement={
+          <IconButton><MoreVertIcon /></IconButton>
+        }
+        targetOrigin={{horizontal: 'right', vertical: 'top'}}
+        anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+      >
+        <MenuItem primaryText="Night Mode" />
+        <MenuItem primaryText="Settings" />
+        <MenuItem primaryText="Sign out" />
+      </IconMenu>
+    );
     return (
       <AppBar
-          title="Title"
-          iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+          title="Habits"
+          iconElementRight={<Logged />}
         />
     );
   }
