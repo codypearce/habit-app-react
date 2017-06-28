@@ -8,7 +8,7 @@ export default class AddHabit extends React.Component {
   }
   render() {
     return (
-     <FloatingActionButton onTouchTap={() => this._openModal()}>
+     <FloatingActionButton onTouchTap={() => this._openModal()} className="addHabitBtn">
       <Add />
      </FloatingActionButton>
     );
