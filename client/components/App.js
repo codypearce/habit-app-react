@@ -4,7 +4,7 @@ injectTapEventPlugin();
 
 import Header from './shared/Header';
 import Footer from './shared/Footer';
-import AddHabit from './modals/AddHabit';
+import AddHabit from './habits/AddHabit';
 import HabitList from './habits/HabitList';
 
 export default class App extends React.Component {
@@ -21,7 +21,6 @@ export default class App extends React.Component {
     };
   }
   addHabit(habit) {
-    console.log(habit)
     this.setState({
       habits: this.state.habits.concat([{name: habit, streak: []}])
     })
