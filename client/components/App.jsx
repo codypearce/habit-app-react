@@ -8,11 +8,17 @@ import AddHabit from './modals/AddHabit';
 import HabitList from './habits/HabitList';
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      habits: ['Wake up early', 'Meditate', 'Exercise', 'Write']
+    };
+  }
   render() {
     return (
      <div>
         <Header />
-        <HabitList />
+        <HabitList habits={this.state.habits}/>
         <AddHabit />
         <Footer />
       </div>
