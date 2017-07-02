@@ -15,6 +15,9 @@ export default class AddHabit extends Component {
   }
   addHabit() {
     this.props.addHabit(this.state.value);
+    this.setState({
+      value: ''
+    })
     this.handleClose();
   }
   handleOpen() {
