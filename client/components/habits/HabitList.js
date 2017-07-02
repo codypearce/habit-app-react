@@ -18,7 +18,7 @@ export default class HabitList extends Component {
   render() {
 
     return (
-      <div>
+      <div className="center">
         {this._renderHabits()}
       </div>
     );
