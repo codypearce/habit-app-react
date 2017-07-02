@@ -13,7 +13,7 @@ body, html {
   z-index: 2;
 }
 .habitrow {
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   border-radius: 5px;
   margin: 0;
   padding: 0;
@@ -22,6 +22,13 @@ body, html {
   height: 100%;
   width: 100%;
   border-right: .5px solid rgba(255,255,255, .4);
+  transition: .3s all ease-in;
+}
+.habitBox:hover {
+  cursor: pointer;
+}
+.habitBox:active {
+  transform: scale(1.05);
 }
 .habitBox--success {
   background-color: #2ecc71;
@@ -30,7 +37,10 @@ body, html {
   background-color: #e74c3c;
 }
 .habitBox--skip {
-  background-color: #f39c12;
+  background-color: #9b59b6;
+}
+.habitBox--noData {
+  background-color: #ecf0f1;
 }
 .habitBlockText {
   margin: 20px 0;

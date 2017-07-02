@@ -15,7 +15,7 @@ export default class Habit extends Component {
         <div className="col-xs-10 row habitrow">
           <HabitBox habitState={'success'}/>
           <HabitBox habitState={'skip'}/>
-          <HabitBox habitState={'success'}/>
+          <HabitBox habitState={'noData'}/>
           <HabitBox habitState={'success'}/>
           <HabitBox habitState={'failure'}/>
           <HabitBox habitState={'success'}/>
