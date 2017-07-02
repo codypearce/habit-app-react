@@ -12,13 +12,18 @@ export default class App extends React.Component {
     super();
     this.addHabit = this.addHabit.bind(this);
     this.state = {
-      habits: ['Wake up early', 'Meditate', 'Exercise', 'Write']
+      habits: [
+        {name:'Wake up early', streak: []},
+        {name:'Meditate', streak: []},
+        {name:'Exercise', streak: []},
+        {name:'Write', streak: []}
+      ]
     };
   }
   addHabit(habit) {
     console.log(habit)
     this.setState({
-      habits: this.state.habits.concat([habit])
+      habits: this.state.habits.concat([{name: habit, streak: []}])
     })
   }
   render() {
