@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import HabitBox from './HabitBox';
 
 export default class Habit extends Component {
   constructor() {
     super();
-
   }
 
   render() {
@@ -13,18 +13,12 @@ export default class Habit extends Component {
           <h2>{this.props.habit.name}</h2>
         </div>
         <div className="col-xs-10 row habitrow">
-          <div className="col-xs-2 habitBox habitBox--success">
-          </div>
-          <div className="col-xs-2 habitBox habitBox--failure">
-          </div>
-          <div className="col-xs-2 habitBox habitBox--skip">
-          </div>
-          <div className="col-xs-2 habitBox habitBox--success">
-          </div>
-          <div className="col-xs-2 habitBox habitBox--success">
-          </div>
-          <div className="col-xs-2 habitBox habitBox--success">
-          </div>
+          <HabitBox habitState={'success'}/>
+          <HabitBox habitState={'skip'}/>
+          <HabitBox habitState={'success'}/>
+          <HabitBox habitState={'success'}/>
+          <HabitBox habitState={'failure'}/>
+          <HabitBox habitState={'success'}/>
         </div>
       </div>
     );
