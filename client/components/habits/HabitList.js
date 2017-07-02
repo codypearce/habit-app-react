@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Habit from './Habit';
 
 export default class HabitList extends Component {
   constructor() {
@@ -11,7 +11,7 @@ export default class HabitList extends Component {
   _renderHabits() {
     return (
       this.state.habits.map(habit => {
-        return <span>{habit}</span>
+        return <Habit key={habit} habit={habit} />
       })
     )
   }
