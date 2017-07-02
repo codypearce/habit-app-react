@@ -24,11 +24,23 @@ export default class HabitList extends Component {
             <h4>Name</h4>
           </div>
           <div className="col-xs-10 row">
-            <div className="col-xs-2">
+            <div className="col-xs-2 center-xs">
               <h4>Today</h4>
             </div>
-            <div className="col-xs-2">
+            <div className="col-xs-2 center-xs">
               <h4>Yesterday</h4>
+            </div>
+            <div className="col-xs-2 center-xs">
+              <h4>Friday</h4>
+            </div>
+            <div className="col-xs-2 center-xs">
+              <h4>Thursday</h4>
+            </div>
+            <div className="col-xs-2 center-xs">
+              <h4>Wednesday</h4>
+            </div>
+            <div className="col-xs-2 center-xs">
+              <h4>Tuesday</h4>
             </div>
           </div>
         </div>
