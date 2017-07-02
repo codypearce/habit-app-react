@@ -16,9 +16,8 @@ export default class HabitList extends Component {
     return (
       dates.map(date => {
         day = MomentMod().add(String(date), 'd');
-        console.log(day)
         return (
-          <div className="col-xs-2 center-xs">
+          <div key={date} className="col-xs-2 center-xs">
             <Moment className="habitBlockText" format='dddd'>{day}</Moment>
           </div>
         )
