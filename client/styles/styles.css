@@ -2,6 +2,8 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #2c3e50;
 }
 
 .addHabitBtn {
@@ -29,6 +31,10 @@ body, html {
 }
 .habitBox--skip {
   background-color: #f39c12;
+}
+.habitBlockText {
+  margin: 20px 0;
+  display: block;
 }
 
 .footer {
