@@ -10,6 +10,25 @@ body, html {
   bottom: 20px;
   z-index: 2;
 }
+.habitrow {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.habitBox {
+  height: 100%;
+  width: 100%;
+}
+.habitBox--success {
+  background-color: #2ecc71;
+}
+.habitBox--failure {
+  background-color: #e74c3c;
+}
+.habitBox--skip {
+  background-color: #f39c12;
+}
 
 .footer {
   text-align: center;
