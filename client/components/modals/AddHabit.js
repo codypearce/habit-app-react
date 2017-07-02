@@ -10,9 +10,13 @@ export default class AddHabit extends Component {
     super();
     this.state = {
       open: false,
+      value: '',
     };
   }
-
+  addHabit() {
+    this.props.addHabit(this.state.value);
+    this.handleClose();
+  }
   handleOpen() {
     this.setState({open: true});
   };
@@ -20,6 +24,11 @@ export default class AddHabit extends Component {
   handleClose() {
     this.setState({open: false});
   };
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
   render() {
     const actions = [
       <FlatButton
@@ -30,7 +39,7 @@ export default class AddHabit extends Component {
       <FlatButton
         label="Add"
         primary={true}
-        onTouchTap={() => this.handleClose()}
+        onTouchTap={() => this.addHabit()}
       />,
     ];
     return (
@@ -45,7 +54,7 @@ export default class AddHabit extends Component {
          open={this.state.open}
          onRequestClose={() => this.handleClose()}
        >
-       <TextField floatingLabelText="Name" />
+       <TextField floatingLabelText="Name"  value={this.state.value} onChange={(event) => this.handleChange(event)} />
        </Dialog>
      </div>
     );

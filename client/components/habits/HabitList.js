@@ -5,6 +5,9 @@ export default class HabitList extends Component {
   constructor(props) {
     super(props);
   }
+  componentWillReceiveProps() {
+    console.log(this.props.habits)
+  }
   _renderHabits() {
     return (
       this.props.habits.map(habit => {
