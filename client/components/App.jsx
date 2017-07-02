@@ -5,14 +5,14 @@ injectTapEventPlugin();
 import Header from './shared/Header';
 import Footer from './shared/Footer';
 import AddHabit from './modals/AddHabit';
-
+import HabitList from './habits/HabitList';
 
 export default class App extends React.Component {
   render() {
     return (
      <div>
         <Header />
-        <h1>Habit App</h1>
+        <HabitList />
         <AddHabit />
         <Footer />
       </div>
