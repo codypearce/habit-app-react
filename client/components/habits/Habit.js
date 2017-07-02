@@ -13,12 +13,10 @@ export default class Habit extends Component {
           <h2>{this.props.habit.name}</h2>
         </div>
         <div className="col-xs-2">
-          <h4>Today</h4>
-          <div>Finished</div>
+          Finished
         </div>
         <div className="col-xs-2">
-          <h4>Yesterday</h4>
-          <div>Not Finished</div>
+          Not finished
         </div>
       </div>
     );

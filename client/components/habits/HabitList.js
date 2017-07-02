@@ -18,7 +18,18 @@ export default class HabitList extends Component {
   render() {
 
     return (
-      <div className="center">
+      <div className="col-xs-10 col-xs-offset-1">
+        <div className="row">
+          <div className="col-xs-2">
+            <h4>Name</h4>
+          </div>
+          <div className="col-xs-2">
+            <h4>Today</h4>
+          </div>
+          <div className="col-xs-2">
+            <h4>Yesterday</h4>
+          </div>
+        </div>
         {this._renderHabits()}
       </div>
     );
