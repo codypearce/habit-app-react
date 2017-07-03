@@ -7,7 +7,7 @@ export default class HabitBox extends Component {
 
   render() {
     return (
-      <div className={`col-xs-2 habitBox habitBox--${this.props.habitState}`}>
+      <div className={`col-xs-2 habitBox habitBox--${this.props.habitState}`} onTouchTap={() => this.props.changeHabitState()}>
       </div>
     );
   }

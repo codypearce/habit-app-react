@@ -13,10 +13,10 @@ export default class App extends React.Component {
     this.addHabit = this.addHabit.bind(this);
     this.state = {
       habits: [
-        {name:'Wake up early', streak: []},
-        {name:'Meditate', streak: []},
-        {name:'Exercise', streak: []},
-        {name:'Write', streak: []}
+        {name:'Wake up early', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
+        {name:'Meditate', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
+        {name:'Exercise', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
+        {name:'Write', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
       ]
     };
   }
