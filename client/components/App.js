@@ -6,6 +6,7 @@ import Header from './shared/Header';
 import Footer from './shared/Footer';
 import AddHabit from './habits/AddHabit';
 import HabitList from './habits/HabitList';
+import Key from './habits/Key';
 
 export default class App extends React.Component {
   constructor() {
@@ -48,6 +49,7 @@ export default class App extends React.Component {
     return (
      <div>
         <Header />
+        <Key />
         <HabitList habits={this.state.habits} changeHabitState={this.changeHabitState}/>
         <AddHabit addHabit={this.addHabit} />
         <Footer />
