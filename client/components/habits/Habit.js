@@ -6,23 +6,23 @@ export default class Habit extends Component {
   constructor() {
     super();
   }
-  changeHabitState() {
 
-  }
   _renderHabitBoxes() {
-    let day, habitDay, key;
+    let day, habitDay, key, habitState;
     const dates = [0, 1,2,3,4,5];
     return (
       dates.map(date => {
         day = MomentMod().add(String(date), 'd');
-        habitDay = 'noData';
+        habitState = 'noData';
+        habitDay = day._d;
         for(key in this.props.habit.streak) {
           if(MomentMod(key).isSame(day, 'day')) {
-            habitDay = this.props.habit.streak[key]
+            habitState = this.props.habit.streak[key];
+            habitDay = key;
           }
         }
         return (
-          <HabitBox key={date} habitState={habitDay} changeHabitState={this.changeHabitState}/>
+          <HabitBox key={date} habitName={this.props.habit.name} habitDay={habitDay} habitState={habitState} changeHabitState={this.props.changeHabitState}/>
         )
       })
     )

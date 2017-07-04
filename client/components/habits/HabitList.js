@@ -7,9 +7,6 @@ export default class HabitList extends Component {
   constructor(props) {
     super(props);
   }
-  componentWillReceiveProps() {
-    console.log(this.props.habits)
-  }
   _renderDates() {
     let day;
     const dates = [1,2,3,4,5];
@@ -27,7 +24,7 @@ export default class HabitList extends Component {
   _renderHabits() {
     return (
       this.props.habits.map(habit => {
-        return <Habit key={habit.name} habit={habit} />
+        return <Habit key={habit.name} habit={habit}  changeHabitState={this.props.changeHabitState}/>
       })
     )
   }

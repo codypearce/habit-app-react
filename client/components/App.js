@@ -11,6 +11,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.addHabit = this.addHabit.bind(this);
+    this.changeHabitState = this.changeHabitState.bind(this);
     this.state = {
       habits: [
         {name:'Wake up early', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
@@ -25,11 +26,25 @@ export default class App extends React.Component {
       habits: this.state.habits.concat([{name: habit, streak: []}])
     })
   }
+  changeHabitState(name, day) {
+    const newHabits = this.state.habits;
+    const habit = newHabits.filter((habit) => {return habit.name === name});
+    if(habit[0].streak[day] == 'success') {
+      habit[0].streak[day] = 'failure';
+    } else if (habit[0].streak[day] == 'failure') {
+      habit[0].streak[day] = 'skip';
+    } else if (habit[0].streak[day] == 'skip') {
+      habit[0].streak[day] = 'noData';
+    } else {
+      habit[0].streak[day] = 'success';
+    }
+    this.setState({habits: newHabits})
+  }
   render() {
     return (
      <div>
         <Header />
-        <HabitList habits={this.state.habits}/>
+        <HabitList habits={this.state.habits} changeHabitState={this.changeHabitState}/>
         <AddHabit addHabit={this.addHabit} />
         <Footer />
       </div>
