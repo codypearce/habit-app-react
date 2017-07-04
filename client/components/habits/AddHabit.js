@@ -24,7 +24,7 @@ export default class AddHabit extends Component {
     return (
       <div className="col-xs-10 col-xs-offset-1 addHabitRow">
        <input className="addHabitInput col-xs-2" value={this.state.value} onChange={(event) => this.handleChange(event)} />
-       <button onTouchTap={() => this.addHabit()}>Add Habit</button>
+       <button className="addHabitBtn" onTouchTap={() => this.addHabit()}>Add Habit</button>
      </div>
     );
   }
