@@ -22,6 +22,9 @@ export default class App extends React.Component {
     };
   }
   addHabit(habit) {
+    if(!habit) {
+      return;
+    }
     this.setState({
       habits: this.state.habits.concat([{name: habit, streak: []}])
     })
