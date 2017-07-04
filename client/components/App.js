@@ -27,6 +27,7 @@ export default class App extends React.Component {
     })
   }
   changeHabitState(name, day) {
+    console.log(day)
     const newHabits = this.state.habits;
     const habit = newHabits.filter((habit) => {return habit.name === name});
     if(habit[0].streak[day] == 'success') {

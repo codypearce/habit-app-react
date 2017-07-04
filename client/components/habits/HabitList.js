@@ -12,7 +12,7 @@ export default class HabitList extends Component {
     const dates = [1,2,3,4,5];
     return (
       dates.map(date => {
-        day = MomentMod().add(String(date), 'd');
+        day = MomentMod().subtract(String(date), 'd');
         return (
           <div key={date} className="col-xs-2 center-xs">
             <Moment className="habitBlockText" format='dddd'>{day}</Moment>

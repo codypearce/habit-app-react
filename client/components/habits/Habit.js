@@ -12,7 +12,7 @@ export default class Habit extends Component {
     const dates = [0, 1,2,3,4,5];
     return (
       dates.map(date => {
-        day = MomentMod().add(String(date), 'd');
+        day = MomentMod().subtract(String(date), 'd');
         habitState = 'noData';
         habitDay = day._d;
         for(key in this.props.habit.streak) {
