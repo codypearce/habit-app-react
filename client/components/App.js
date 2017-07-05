@@ -12,6 +12,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.addHabit = this.addHabit.bind(this);
+    this.deleteHabit = this.deleteHabit.bind(this);
     this.changeHabitState = this.changeHabitState.bind(this);
     this.state = {
       habits: [
@@ -30,8 +31,13 @@ export default class App extends React.Component {
       habits: this.state.habits.concat([{name: habit, streak: []}])
     })
   }
+  deleteHabit(habit) {
+    const newHabits = this.state.habits;
+    newHabits.splice(newHabits.indexOf(habit), 1);
+    this.setState({habits: newHabits})
+  }
+
   changeHabitState(name, day) {
-    console.log(day)
     const newHabits = this.state.habits;
     const habit = newHabits.filter((habit) => {return habit.name === name});
     if(habit[0].streak[day] == 'success') {
@@ -50,7 +56,7 @@ export default class App extends React.Component {
      <div>
         <Header />
         <Key />
-        <HabitList habits={this.state.habits} changeHabitState={this.changeHabitState}/>
+        <HabitList habits={this.state.habits} deleteHabit={this.deleteHabit} changeHabitState={this.changeHabitState}/>
         <AddHabit addHabit={this.addHabit} />
         <Footer />
       </div>

@@ -35,7 +35,7 @@ export default class Habit extends Component {
             <h2>{this.props.habit.name}</h2>
             <div>
               <span className="editHabit">Edit</span>
-              <span className="deleteHabit">Delete</span>
+              <span className="deleteHabit" onTouchTap={() => this.props.deleteHabit(this.props.habit)}>Delete</span>
             </div>
           </div>
         </div>

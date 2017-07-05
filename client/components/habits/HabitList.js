@@ -24,7 +24,7 @@ export default class HabitList extends Component {
   _renderHabits() {
     return (
       this.props.habits.map(habit => {
-        return <Habit key={habit.name} habit={habit}  changeHabitState={this.props.changeHabitState}/>
+        return <Habit key={habit.name} habit={habit}  deleteHabit={this.props.deleteHabit} changeHabitState={this.props.changeHabitState}/>
       })
     )
   }
