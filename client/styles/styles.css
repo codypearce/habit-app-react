@@ -5,12 +5,38 @@ body, html {
   font-family: 'Roboto', sans-serif;
   color: #2c3e50;
 }
-
+.habitName {
+  height: 70px;
+  margin: 0;
+}
+.habitName h2 {
+  margin: 0;
+  display: inline-block;
+  margin-right: 10px;
+}
+.habitName:hover span {
+  opacity: 1
+}
+.habitName span {
+  font-size: 12px;
+  margin-left: 5px;
+  opacity: 0;
+}
+.habitName span:hover {
+  cursor: pointer;
+}
+.editHabit {
+  color: #d35400;
+}
+.deleteHabit {
+  color: #c0392b;
+}
 .habitrow {
   border-bottom: 1px solid #ddd;
   border-radius: 5px;
   margin: 0;
   padding: 0;
+  height: 70px;
 }
 .habitBox {
   height: 100%;
@@ -84,6 +110,9 @@ body, html {
   font-size: 12px;
   margin: 0;
   margin-bottom: 3px;
+}
+.keyBox {
+  margin: 0 10px;
 }
 .key--success {
   background-color: #2ecc71;

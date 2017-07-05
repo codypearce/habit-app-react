@@ -31,7 +31,13 @@ export default class Habit extends Component {
     return (
       <div className="row">
         <div className="col-xs-2">
-          <h2>{this.props.habit.name}</h2>
+          <div className="habitName between-xs middle-xs row">
+            <h2>{this.props.habit.name}</h2>
+            <div>
+              <span className="editHabit">Edit</span>
+              <span className="deleteHabit">Delete</span>
+            </div>
+          </div>
         </div>
         <div className="col-xs-10 row habitrow">
           {this._renderHabitBoxes()}
