@@ -7,6 +7,8 @@ import Footer from './shared/Footer';
 import AddHabit from './habits/AddHabit';
 import HabitList from './habits/HabitList';
 import Key from './habits/Key';
+import MomentMod from 'moment';
+
 
 export default class App extends React.Component {
   constructor() {
@@ -17,12 +19,36 @@ export default class App extends React.Component {
     this.changeHabitState = this.changeHabitState.bind(this);
     this.state = {
       habits: [
-        {name:'Wake up early', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
-        {name:'Meditate', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
-        {name:'Exercise', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
-        {name:'Write', streak: {'Mon Jul 03 2017 19:19:29 GMT-0600 (MDT)': 'success'}},
+        {name:'Wake up early', streak: this.randomStreak()},
+        {name:'Meditate', streak: this.randomStreak()},
+        {name:'Exercise', streak:this.randomStreak()},
+        {name:'Write', streak: this.randomStreak()},
       ]
     };
+  }
+  randomStreak() {
+    let streak = {};
+    let day;
+    const dates = [0, 1,2,3,4,5];
+    dates.map(date => {
+      day = MomentMod().subtract(String(date), 'd');
+      streak[day._d] = this.randomValue();
+    })
+    console.log(streak)
+    return streak;
+  }
+  randomValue() {
+    const rand = Math.floor((Math.random() * 4) + 1);
+    console.log(rand)
+    if(rand === 1) {
+      return 'success';
+    } else if(rand === 2) {
+      return 'failure';
+    } else if(rand == 3) {
+      return 'skip';
+    } else {
+      return 'success';
+    }
   }
   addHabit(habit) {
     if(!habit) {
